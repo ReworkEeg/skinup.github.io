@@ -1,0 +1,11 @@
+﻿[
+  { "name": "Kilowatt Case", "file": "img/case-kilowatt-case.png", "price": 1.2, "id": 1 },
+  { "name": "Recoil Case", "file": "img/case-recoil-case.png", "price": 0.9, "id": 2 },
+  { "name": "Fracture Case", "file": "img/case-fracture-case.png", "price": 0.7, "id": 3 },
+  { "name": "Dreams & Nightmares Case", "file": "img/case-dreams-nightmares-case.png", "price": 2.4, "id": 4 },
+  { "name": "Snakebite Case", "file": "img/case-snakebite-case.png", "price": 0.5, "id": 5 },
+  { "name": "Gallery Case", "file": "img/case-gallery-case.png", "price": 3.1, "id": 6 },
+  { "name": "Fever Case", "file": "img/case-fever-case.png", "price": 1.8, "id": 7 },
+  { "name": "CS20 Case", "file": "img/case-cs20-case.png", "price": 4.5, "id": 8 },
+  { "name": "Prisma 2 Case", "file": "img/case-prisma-2-case.png", "price": 1.1, "id": 9 }
+]

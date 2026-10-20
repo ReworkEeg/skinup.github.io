@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Инвентарь — SKINUP.CS2</title>
+<meta name="description" content="Твой инвентарь CS2: все выигранные скины и ножи с ценами Steam.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+<div class="preloader">
+  <div class="preloader-logo" aria-hidden="true">
+    <span style="--i:0">И</span><span style="--i:1">Н</span><span style="--i:2">В</span><span style="--i:3">Е</span><span style="--i:4">Н</span><span style="--i:5">Т</span><span style="--i:6">А</span><span style="--i:7">Р</span><span style="--i:8">Ь</span>
+  </div>
+  <div class="preloader-bar"><i></i></div>
+  <div class="preloader-num">000%</div>
+</div>
+
+<div class="page-curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo"><span class="pulse"></span>SKINUP<b>.CS2</b></a>
+    <nav class="nav">
+      <a href="index.html">Апгрейдер</a>
+      <a href="cases.html">Кейсы</a>
+      <a href="inventory.html" class="active">Инвентарь <b data-inv-count style="color:var(--accent)">0</b></a>
+      <a href="skins.html">Скины</a>
+      <a href="how.html">Как играть</a>
+      <a href="contact.html">Поддержка</a>
+    </nav>
+    <div class="balance"><i>$</i><span data-balance>$250</span></div>
+    <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu-overlay">
+  <ul class="menu-list">
+    <li><a href="index.html">Апгрейдер</a></li>
+    <li><a href="cases.html">Кейсы</a></li>
+    <li><a href="inventory.html">Инвентарь</a></li>
+    <li><a href="skins.html">Скины</a></li>
+    <li><a href="how.html">Как играть</a></li>
+    <li><a href="contact.html">Поддержка</a></li>
+  </ul>
+  <div class="menu-meta">Демо-режим · реальные скины CS2 · без регистрации</div>
+</div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb" data-hero-anim><a href="index.html">Главная</a> / <span>Инвентарь</span></div>
+      <h1 data-hero-anim>Твой<br><span class="grad">инвентарь</span></h1>
+      <p data-hero-anim>Все скины, выигранные в кейсах. Общая стоимость <b id="inv-total" style="color:var(--accent)">$0</b> · предметов: <b id="inv-count">0</b>.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <div data-reveal>
+          <div class="eyebrow">Дропы</div>
+          <h2>Выигранные предметы</h2>
+        </div>
+        <button type="button" class="btn btn-ghost" id="inv-clear" data-reveal style="--d:.1s">Очистить инвентарь</button>
+      </div>
+      <div class="skins-grid" id="inventory-grid"></div>
+      <p id="inv-empty" style="color:var(--muted);display:none;text-align:center;margin-top:10px">
+        Инвентарь пуст. Открой <a href="cases.html" style="color:var(--accent)">кейсы</a>, чтобы выбить первые скины.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div data-reveal>
+        <div class="footer-logo">SKINUP<b>.CS2</b></div>
+        <p>Демо-апгрейдер скинов Counter-Strike 2. Все предметы — реальные скины из Steam Community Market.</p>
+      </div>
+      <div data-reveal style="--d:.1s">
+        <h4>Разделы</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Апгрейдер</a></li>
+          <li><a href="cases.html">Кейсы</a></li>
+          <li><a href="inventory.html">Инвентарь</a></li>
+          <li><a href="skins.html">Скины</a></li>
+          <li><a href="how.html">Как играть</a></li>
+          <li><a href="contact.html">Поддержка</a></li>
+        </ul>
+      </div>
+      <div data-reveal style="--d:.2s">
+        <h4>Инфо</h4>
+        <ul class="footer-links">
+          <li><a href="how.html">Честный RNG</a></li>
+          <li><a href="how.html">Шанс и множители</a></li>
+          <li><a href="contact.html">Связаться</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SKINUP.CS2 · Демо-проект, не связан с Valve</span>
+      <span class="age">18+ · только витринный контент</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="Наверх">↑</button>
+<div class="toast" id="toast"></div>
+
+<script src="js/items.js"></script>
+<script src="js/main.js"></script>
+<script>
+(() => {
+  const grid = document.getElementById('inventory-grid');
+  const empty = document.getElementById('inv-empty');
+  const totalEl = document.getElementById('inv-total');
+  const countEl = document.getElementById('inv-count');
+  if (!grid) return;
+
+  function render() {
+    const list = SKINUP.getInventory();
+    grid.innerHTML = '';
+    countEl.textContent = list.length;
+    totalEl.textContent = fmtMoney(list.reduce((s, x) => s + (x.price || 0), 0));
+    empty.style.display = list.length ? 'none' : 'block';
+
+    list.forEach((s, i) => {
+      const r = RARITY[s.rarity] || RARITY.blue;
+      const el = document.createElement('article');
+      el.className = 'skin-card';
+      el.setAttribute('data-reveal', 'scale');
+      el.style.setProperty('--d', Math.min(i % 6, 5) * 0.06 + 's');
+      el.style.setProperty('--rc', r.color);
+      el.innerHTML = `
+        <img src="${s.file}" alt="${s.name}" loading="lazy">
+        <h3>${s.name}</h3>
+        <span class="wear">${s.wear || ''}</span>
+        <div class="price-row">
+          <span class="price">${fmtMoney(s.price || 0)}</span>
+          <span class="rarity">${r.label}</span>
+        </div>`;
+      grid.appendChild(el);
+      const obs = new IntersectionObserver(en => {
+        if (en[0].isIntersecting) { el.classList.add('visible'); obs.disconnect(); }
+      }, { threshold: 0.08 });
+      obs.observe(el);
+    });
+
+    document.querySelectorAll('[data-inv-count]').forEach(el => { el.textContent = list.length; });
+  }
+
+  document.getElementById('inv-clear')?.addEventListener('click', () => {
+    if (!confirm('Очистить инвентарь?')) return;
+    SKINUP.clearInventory();
+    render();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

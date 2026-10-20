@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейсы — SKINUP.CS2</title>
+<meta name="description" content="Открытие кейсов CS2: лента, шансы и реальные скины.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+<div class="preloader">
+  <div class="preloader-logo" aria-hidden="true">
+    <span style="--i:0">К</span><span style="--i:1">Е</span><span style="--i:2">Й</span><span style="--i:3">С</span><span style="--i:4">Ы</span>
+  </div>
+  <div class="preloader-bar"><i></i></div>
+  <div class="preloader-num">000%</div>
+</div>
+
+<div class="page-curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo"><span class="pulse"></span>SKINUP<b>.CS2</b></a>
+    <nav class="nav">
+      <a href="index.html">Апгрейдер</a>
+      <a href="cases.html" class="active">Кейсы</a>
+      <a href="inventory.html">Инвентарь</a>
+      <a href="skins.html">Скины</a>
+      <a href="how.html">Как играть</a>
+      <a href="contact.html">Поддержка</a>
+    </nav>
+    <div class="balance"><i>$</i><span data-balance>$250</span></div>
+    <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu-overlay">
+  <ul class="menu-list">
+    <li><a href="index.html">Апгрейдер</a></li>
+    <li><a href="cases.html">Кейсы</a></li>
+    <li><a href="inventory.html">Инвентарь</a></li>
+    <li><a href="skins.html">Скины</a></li>
+    <li><a href="how.html">Как играть</a></li>
+    <li><a href="contact.html">Поддержка</a></li>
+  </ul>
+  <div class="menu-meta">Демо-режим · реальные скины CS2 · без регистрации</div>
+</div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb" data-hero-anim><a href="index.html">Главная</a> / <span>Кейсы</span></div>
+      <h1 data-hero-anim>Бесплатные<br><span class="grad">кейсы</span> CS2</h1>
+      <p data-hero-anim>Открывай бесплатно без ограничений: классическая лента с маркером и шансами как в CS2. Выигрыш падает на баланс.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <div data-reveal>
+          <div class="eyebrow">Витрина</div>
+          <h2>Выбери кейс</h2>
+        </div>
+          <p data-reveal style="--d:.1s">Все кейсы бесплатные — открывай сколько хочешь. Шансы дропа соответствуют пропорциям CS2.</p>
+      </div>
+      <div class="cases-grid" id="cases-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <div data-reveal>
+          <div class="eyebrow">Лента</div>
+          <h2>Последние дропы</h2>
+        </div>
+      </div>
+      <div class="history" id="drops" data-reveal>
+        <p style="color:var(--muted)">Тут появятся последние дропы</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <div data-reveal>
+          <div class="eyebrow">Шансы</div>
+          <h2>Таблица редкостей</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step" data-reveal style="--d:0s">
+          <div class="step-num" style="-webkit-text-stroke-color:#4b69ff;color:transparent">79.92%</div>
+          <div><h3 style="color:#4b69ff">Mil-Spec (синий)</h3><p>Базовый дроп. Часто стоит меньше кейса.</p></div>
+        </div>
+        <div class="step" data-reveal style="--d:.06s">
+          <div class="step-num" style="-webkit-text-stroke-color:#8847ff;color:transparent">15.98%</div>
+          <div><h3 style="color:#8847ff">Restricted (фиолетовый)</h3><p>Приятный средний уровень, иногда в плюс.</p></div>
+        </div>
+        <div class="step" data-reveal style="--d:.12s">
+          <div class="step-num" style="-webkit-text-stroke-color:#d32ce6;color:transparent">3.20%</div>
+          <div><h3 style="color:#d32ce6">Classified (розовый)</h3><p>Уже интересно: покрывает несколько кейсов.</p></div>
+        </div>
+        <div class="step" data-reveal style="--d:.18s">
+          <div class="step-num" style="-webkit-text-stroke-color:#eb4b4b;color:transparent">0.64%</div>
+          <div><h3 style="color:#eb4b4b">Covert (красный)</h3><p>Редкий дроп, почти всегда в плюс.</p></div>
+        </div>
+        <div class="step" data-reveal style="--d:.24s">
+          <div class="step-num" style="-webkit-text-stroke-color:#ffd700;color:transparent">0.26%</div>
+          <div><h3 style="color:#ffd700">Нож (золото)</h3><p>Мечта любого кейс-боя: Karambit, Bayonet, Skeleton.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box" data-reveal="scale">
+        <h2>Кейсы — не всё</h2>
+        <p>Проверь апгрейдер: там шанс зависит только от цен скинов.</p>
+        <a href="index.html" class="btn btn-primary">К апгрейдеру <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div data-reveal>
+        <div class="footer-logo">SKINUP<b>.CS2</b></div>
+        <p>Демо-апгрейдер и кейсы Counter-Strike 2. Все предметы — реальные скины из Steam Community Market.</p>
+      </div>
+      <div data-reveal style="--d:.1s">
+        <h4>Разделы</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Апгрейдер</a></li>
+          <li><a href="cases.html">Кейсы</a></li>
+          <li><a href="inventory.html">Инвентарь</a></li>
+          <li><a href="skins.html">Скины</a></li>
+          <li><a href="how.html">Как играть</a></li>
+          <li><a href="contact.html">Поддержка</a></li>
+        </ul>
+      </div>
+      <div data-reveal style="--d:.2s">
+        <h4>Инфо</h4>
+        <ul class="footer-links">
+          <li><a href="how.html">Честный RNG</a></li>
+          <li><a href="how.html">Шанс и множители</a></li>
+          <li><a href="contact.html">Связаться</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SKINUP.CS2 · Демо-проект, не связан с Valve</span>
+      <span class="age">18+ · только витринный контент</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="Наверх">↑</button>
+
+<div class="case-open" id="case-open">
+  <div class="case-open-title" id="case-open-title">Открываем кейс</div>
+  <div class="case-reel-wrap">
+    <div class="case-marker"></div>
+    <div class="case-reel" id="case-reel"></div>
+  </div>
+  <div class="case-result" id="case-result"></div>
+  <div class="case-actions">
+    <button type="button" class="btn btn-primary" id="open-btn" disabled>Крутится...</button>
+    <button type="button" class="btn btn-ghost" id="close-btn">Закрыть</button>
+  </div>
+</div>
+
+<script src="js/items.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cases.js"></script>
+</body>
+</html>

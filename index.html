@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKINUP.CS2 — апгрейдер скинов Counter-Strike 2</title>
+<meta name="description" content="Апгрейдер скинов CS2: повышай шанс, апгрейдь ножи и редкости. Реальные предметы Steam.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+<div class="preloader">
+  <div class="preloader-logo" aria-hidden="true">
+    <span style="--i:0">S</span><span style="--i:1">K</span><span style="--i:2">I</span><span style="--i:3">N</span><span style="--i:4">U</span><span style="--i:5">P</span><span style="--i:6">.</span><b style="--i:7">CS2</b>
+  </div>
+  <div class="preloader-bar"><i></i></div>
+  <div class="preloader-num">000%</div>
+</div>
+
+<div class="page-curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="grain" style="display:none"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo"><span class="pulse"></span>SKINUP<b>.CS2</b></a>
+    <nav class="nav">
+      <a href="index.html" class="active">Апгрейдер</a>
+      <a href="cases.html">Кейсы</a>
+      <a href="inventory.html">Инвентарь</a>
+      <a href="skins.html">Скины</a>
+      <a href="how.html">Как играть</a>
+      <a href="contact.html">Поддержка</a>
+    </nav>
+    <div class="balance"><i>$</i><span data-balance>$250</span></div>
+    <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu-overlay">
+  <ul class="menu-list">
+    <li><a href="index.html">Апгрейдер</a></li>
+    <li><a href="cases.html">Кейсы</a></li>
+    <li><a href="inventory.html">Инвентарь</a></li>
+    <li><a href="skins.html">Скины</a></li>
+    <li><a href="how.html">Как играть</a></li>
+    <li><a href="contact.html">Поддержка</a></li>
+  </ul>
+  <div class="menu-meta">Демо-режим · реальные скины CS2 · без регистрации</div>
+</div>
+
+<main>
+  <section class="hero" style="padding-bottom:30px">
+    <div class="container">
+      <div class="hero-tag" data-hero-anim><i></i>Апгрейдер скинов Counter-Strike 2</div>
+      <h1>
+        <span class="line"><span>Апгрейдь скины</span></span>
+        <span class="line"><span class="grad">в ножи</span></span>
+      </h1>
+      <p data-hero-anim>Выбери свой скин, цель и множитель. Колесо решит, станешь ли ты обладателем ножа или вернёшься в инвентарь с пустыми руками.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="upgrade-wrap" data-reveal>
+        <div class="slot-panel from">
+          <div class="slot-title"><b>Твой скин</b><span class="slot-price" id="from-price">—</span></div>
+          <div class="slot-pick" id="from-pick"></div>
+        </div>
+
+        <div class="wheel-panel">
+          <div class="wheel" id="wheel">
+            <div class="wheel-arm"><div class="wheel-pointer"></div></div>
+            <div class="wheel-inner">
+              <div class="wheel-chance" id="chance">0%</div>
+              <div class="wheel-label">шанс</div>
+            </div>
+          </div>
+          <div class="multipliers" id="multipliers">
+            <button type="button" class="mult active" data-mult="1">x1</button>
+            <button type="button" class="mult" data-mult="1.5">x1.5</button>
+            <button type="button" class="mult" data-mult="2">x2</button>
+          </div>
+          <button type="button" class="btn btn-primary btn-big" id="spin-btn" disabled>Апгрейд</button>
+        </div>
+
+        <div class="slot-panel to">
+          <div class="slot-title"><b>Цель</b><span class="slot-price" id="to-price">—</span></div>
+          <div class="slot-pick" id="to-pick"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:10px">
+    <div class="container">
+      <div class="section-head">
+        <div data-reveal>
+          <div class="eyebrow">Лента</div>
+          <h2>История апгрейдов</h2>
+        </div>
+        <p data-reveal style="--d:.1s">Последние исходы в этой сессии. RNG не спит.</p>
+      </div>
+      <div class="history" id="history" data-reveal>
+        <div class="hist-row" style="opacity:.5">
+          <div style="width:54px"></div>
+          <div class="hist-name">Пока пусто<small>Выбери скин и цель — история появится здесь</small></div>
+          <div class="hist-chance">—</div>
+          <div class="hist-status" style="color:var(--muted)">Ждём</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Апгрейд <b>✦</b> Ножи <b>✦</b> Доплер <b>✦</b> Марбл Фейд <b>✦</b> Асиимов <b>✦</b> Принтстрим <b>✦</b></span>
+      <span>Апгрейд <b>✦</b> Ножи <b>✦</b> Доплер <b>✦</b> Марбл Фейд <b>✦</b> Асиимов <b>✦</b> Принтстрим <b>✦</b></span>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div data-reveal>
+          <div class="eyebrow">Статистика</div>
+          <h2>Цифры дня</h2>
+        </div>
+      </div>
+      <div class="hero-stats" style="margin-top:0;border-top:none;padding-top:0">
+        <div class="stat" data-reveal style="--d:0s"><b data-count="12847">0</b><span>апгрейдов сегодня</span></div>
+        <div class="stat" data-reveal style="--d:.08s"><b data-count="312" data-suffix="+">0</b><span>выпавших ножей</span></div>
+        <div class="stat" data-reveal style="--d:.16s"><b data-count="1" data-prefix="$" data-suffix="M+">0</b><span>сумма скинов</span></div>
+        <div class="stat" data-reveal style="--d:.24s"><b data-count="96" data-suffix="%">0</b><span>апгрейдов за 5 сек</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <div data-reveal>
+          <div class="eyebrow">Популярное</div>
+          <h2>Скины в апгрейде</h2>
+        </div>
+        <a href="skins.html" class="btn btn-ghost" data-reveal style="--d:.1s">Весь каталог <span class="arr">→</span></a>
+      </div>
+      <div class="skins-grid" id="top-skins"></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box" data-reveal="scale">
+        <h2>Разберись<br>правилах</h2>
+        <p>Как считается шанс, что такое множители и почему RNG — король.</p>
+        <a href="how.html" class="btn btn-primary">Читать гайд <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div data-reveal>
+        <div class="footer-logo">SKINUP<b>.CS2</b></div>
+        <p>Демо-апгрейдер скинов Counter-Strike 2. Все предметы — реальные скины из Steam Community Market.</p>
+      </div>
+      <div data-reveal style="--d:.1s">
+        <h4>Разделы</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Апгрейдер</a></li>
+          <li><a href="cases.html">Кейсы</a></li>
+          <li><a href="inventory.html">Инвентарь</a></li>
+          <li><a href="skins.html">Скины</a></li>
+          <li><a href="how.html">Как играть</a></li>
+          <li><a href="contact.html">Поддержка</a></li>
+        </ul>
+      </div>
+      <div data-reveal style="--d:.2s">
+        <h4>Инфо</h4>
+        <ul class="footer-links">
+          <li><a href="how.html">Честный RNG</a></li>
+          <li><a href="how.html">Шанс и множители</a></li>
+          <li><a href="contact.html">Связаться</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SKINUP.CS2 · Демо-проект, не связан с Valve</span>
+      <span class="age">18+ · только витринный контент</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="Наверх">↑</button>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/items.js"></script>
+<script src="js/main.js"></script>
+<script src="js/upgrade.js"></script>
+<script>
+(() => {
+  const box = document.getElementById('top-skins');
+  if (!box || typeof SKINS === 'undefined') return;
+  SKINS.slice().sort((a,b) => b.price - a.price).slice(0, 8).forEach((s, i) => {
+    const r = RARITY[s.rarity];
+    const el = document.createElement('article');
+    el.className = 'skin-card';
+    el.setAttribute('data-reveal', 'scale');
+    el.style.setProperty('--d', (i % 4) * 0.08 + 's');
+    el.style.setProperty('--rc', r.color);
+    el.innerHTML = `
+      <img src="${s.file}" alt="${s.name}" loading="lazy">
+      <h3>${s.name}</h3>
+      <span class="wear">${s.wear}</span>
+      <div class="price-row">
+        <span class="price">${fmtMoney(s.price)}</span>
+        <span class="rarity">${r.label}</span>
+      </div>`;
+    box.appendChild(el);
+  });
+})();
+</script>
+</body>
+</html>
